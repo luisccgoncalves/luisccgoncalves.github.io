@@ -90,24 +90,24 @@
 	<div class="container">
 		<form onsubmit="return calcula()">
 			Desconto worten:<br>
-			<input type="number" placeholder="Percentagem"><br>
+			<input type="number" placeholder="Percentagem" min="0" max="99" required><br>
 			Preço concorrência:<br>
-			<input type="number" placeholder="Euros"><br>
+			<input type="number" placeholder="Euros" min="0" step="any" required><br>
 			Forçar preço para:<br>
-			<input type="text"><br>
-			<button onclick="calcula()">Calcular</button>
+			<input type="text" disabled><br>
+			<button type="submit">Calcular</button>
 		</form>
 	</div>
 
 	<script>
-		function calcula(){
+		function calcula(event){
 			var desc = (document).getElementsByTagName("input")[0].value;
 			var conc = (document).getElementsByTagName("input")[1].value;
 			var forca;
 
 			forca = conc/((100-desc)/100);
 
-			(document).getElementsByTagName("input")[2].value= forca;
+			(document).getElementsByTagName("input")[2].value= forca.toFixed(2)+"€";
 
 			return false;
 
