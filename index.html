@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: monospace;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .blk {
+            animation: blinker 2s linear infinite;
+        }
+        
+        @keyframes blinker {
+            0% {
+                opacity: 1;
+            }
+            49% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            99% {
+                opacity: 0;
+            }
+        }
+    </style>
+    <link rel="shortcut icon" type="image/png" href="/favicon.png" />
+    <meta charset="utf-8">
+    <title>Luís Gonçalves</title>
+</head>
+
+<body>
+    <p>Luís Gonçalves</p> <a href="https://linkedin.com/in/luiscgoncalves/" target="_blank">Linkedin</a>
+    <br> <a href="https://github.com/luisccgoncalves" target="_blank">Github</a>
+    <br>
+    <?php     $email = 'mailto:' . 'main@luisgoncalves.eu';     $crackme = "";     for ($i=0; $i<strlen($email); $i++){         $crackme .= "&#" . ord($email[$i]) . ";";     }?><a href="<?=$crackme?>" target="_blank">E-mail</a><span class="blk">|</span></body>
+
+</html>
